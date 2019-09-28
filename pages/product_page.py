@@ -38,6 +38,17 @@ class ProductPage(BasePage):
     
 
 
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.PRODUCT_ADDED_ALERT), \
+        "Success message is presented, but should not be"
+
+
+    def should_success_message_to_dissapear(self):
+    	assert self.is_disappeared(*ProductPageLocators.PRODUCT_ADDED_ALERT), \
+        "Success message is not dissapeared, but should be"
+
+
     def get_price(self):
 	    price = self.browser.find_element(*ProductPageLocators.PRICE).text
 	    return price
