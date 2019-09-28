@@ -13,3 +13,9 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    VIEW_BASKET = (By.CSS_SELECTOR, "body > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+
+
+class BasketPageLocators():
+	ITEMS_CONTAINER = (By.CSS_SELECTOR, '.basket-items')
+	EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner p')

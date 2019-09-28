@@ -12,6 +12,18 @@ class ProductPage(BasePage):
 	    add_to_cart_button.click()
 
     
+    def get_price(self):
+	    price = self.browser.find_element(*ProductPageLocators.PRICE).text
+	    return price
+    def get_basket_value_from_alert_info(self):
+    	return self.browser.find_element(*ProductPageLocators.ALERT_INFO).text    	
+    def get_product_title(self):
+    	return self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text
+    def get_product_added_alert(self):
+    	return self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_ALERT).text
+
+
+
     def should_be_price(self):
     	assert self.is_element_present(*ProductPageLocators.PRICE), "There is no price at product page."
     def should_be_success_messages(self):
@@ -49,13 +61,7 @@ class ProductPage(BasePage):
         "Success message is not dissapeared, but should be"
 
 
-    def get_price(self):
-	    price = self.browser.find_element(*ProductPageLocators.PRICE).text
-	    return price
-    def get_basket_value_from_alert_info(self):
-    	return self.browser.find_element(*ProductPageLocators.ALERT_INFO).text    	
-    def get_product_title(self):
-    	return self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text
-    def get_product_added_alert(self):
-    	return self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_ALERT).text
+
+
+
 
