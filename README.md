@@ -1,2 +1,4 @@
 # OscarSanbox
-Final stepik project
+
+Selenium + Pytest UI Ecommerce site test. 
+
